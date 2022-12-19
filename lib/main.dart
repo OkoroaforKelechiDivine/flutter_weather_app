@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/screens/home_screen.dart';
 
+// @dart=2.9
+
 void main(){
   runApp(const MyApp());
 }

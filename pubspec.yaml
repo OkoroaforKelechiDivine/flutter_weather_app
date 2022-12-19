@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   get:
+  geolocator: ^6.2.0
 
   cupertino_icons: ^1.0.2
 

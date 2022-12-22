@@ -25,7 +25,7 @@ class _LocationErrorState extends State<LocationError> {
           ),
           SizedBox(height: 10),
           Text(
-            'Your Location is Disabled',
+            'Your Location is Disabled.',
             style: TextStyle(
               color: Colors.black,
               fontSize: 25,
@@ -35,7 +35,7 @@ class _LocationErrorState extends State<LocationError> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 75, vertical: 10),
             child: Text(
-              "Please turn on your location service and refresh the app",
+              "Please turn on your location service and refresh the app.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
@@ -62,18 +62,18 @@ class _LocationErrorState extends State<LocationError> {
                     barrierDismissible: false,
                     builder: (context) {
                       return AlertDialog(
-                        title: Text('Cannot Get Your Location'),
+                        title: Text('Cannot Get Your Location.'),
                         content: SingleChildScrollView(
                           child: ListBody(
                             children: <Widget>[
                               Text(
-                                  'This app uses your phone location to get your location accurate weather data'),
+                                  'This app uses your phone location to get your location accurate weather data.'),
                             ],
                           ),
                         ),
                         actions: <Widget>[
                           TextButton(
-                            child: Text('OK'),
+                            child: Text('OK.'),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },

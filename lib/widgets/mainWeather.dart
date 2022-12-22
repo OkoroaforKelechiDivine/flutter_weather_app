@@ -44,11 +44,9 @@ class MainWeather extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(bottom: 25, right: 25),
-                child: MapString.mapStringToIcon(
-                    '${weatherData.weather.currently}', context, 55),
+                child: MapString.mapStringToIcon('${weatherData.weather.currently}', context, 55),
               ),
-              Text(
-                '${weatherData.weather.temperature.toStringAsFixed(0)}°C',
+              Text('${weatherData.weather.temperature.toStringAsFixed(0)}°C',
                 style: TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.w600,

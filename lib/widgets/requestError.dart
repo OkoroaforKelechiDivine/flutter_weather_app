@@ -15,7 +15,7 @@ class RequestError extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            'No Search Result',
+            'No Search .',
             style: TextStyle(
               color: Colors.black,
               fontSize: 30,
@@ -25,7 +25,7 @@ class RequestError extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 75, vertical: 10),
             child: Text(
-              "Please make sure that you entered the correct location name",
+              "Please make sure that you entered the correct location name.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.grey[700],

@@ -50,7 +50,7 @@ class _LocationErrorState extends State<LocationError> {
               textStyle: TextStyle(color: Colors.white),
               padding: EdgeInsets.symmetric(horizontal: 50),
             ),
-            child: Text('Enable Location'),
+            child: Text('Enable Location.'),
             onPressed: () async {
               await location.requestService().then((value) async {
                 if (value) {

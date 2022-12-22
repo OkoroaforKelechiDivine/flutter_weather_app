@@ -12,6 +12,7 @@ class MainWeather extends StatelessWidget {
     fontWeight: FontWeight.w700,
     fontSize: 20,
   );
+
   final TextStyle _style2 = TextStyle(
     fontWeight: FontWeight.w400,
     color: Colors.grey[700],
@@ -34,10 +35,7 @@ class MainWeather extends StatelessWidget {
             ],
           ),
           SizedBox(height: 5),
-          Text(
-            DateFormat.yMMMEd().add_jm().format(DateTime.now()),
-            style: _style2,
-          ),
+          Text(DateFormat.yMMMEd().add_jm().format(DateTime.now()), style: _style2),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -55,8 +53,7 @@ class MainWeather extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-          Text(
-            '${weatherData.weather.maxTemperature.toStringAsFixed(0)}°/ ${weatherData.weather.minTemperature.toStringAsFixed(0)}° Feels like ${weatherData.weather.feelsLike.toStringAsFixed(0)}°',
+          Text('${weatherData.weather.maxTemperature.toStringAsFixed(0)}°/ ${weatherData.weather.minTemperature.toStringAsFixed(0)}° Feels like ${weatherData.weather.feelsLike.toStringAsFixed(0)}°',
             style: _style1.copyWith(fontSize: 19),
           ),
           SizedBox(height: 5),

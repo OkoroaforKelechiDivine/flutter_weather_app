@@ -48,7 +48,7 @@ class MainWeather extends StatelessWidget {
                     '${wData.weather.currently}', context, 55),
               ),
               Text(
-                '${wData.weather.temp.toStringAsFixed(0)}°C',
+                '${wData.weather.temperature.toStringAsFixed(0)}°C',
                 style: TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.w600,
@@ -58,7 +58,7 @@ class MainWeather extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            '${wData.weather.tempMax.toStringAsFixed(0)}°/ ${wData.weather.tempMin.toStringAsFixed(0)}° Feels like ${wData.weather.feelsLike.toStringAsFixed(0)}°',
+            '${wData.weather.maxTemperature.toStringAsFixed(0)}°/ ${wData.weather.minTemperature.toStringAsFixed(0)}° Feels like ${wData.weather.feelsLike.toStringAsFixed(0)}°',
             style: _style1.copyWith(fontSize: 19),
           ),
           SizedBox(height: 5),

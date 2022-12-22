@@ -14,12 +14,12 @@ class WeatherProvider with ChangeNotifier {
   List<DailyWeather> hourly24Weather = [];
   List<DailyWeather> fiveDayWeather = [];
   List<DailyWeather> sevenDayWeather = [];
-  bool loading;
+  bool isLoading;
   bool isRequestError = false;
   bool isLocationError = false;
 
   getWeatherData() async {
-    loading = true;
+    isLoading = true;
     isRequestError = false;
     isLocationError = false;
     await Location().requestService().then((value) async {
@@ -37,7 +37,7 @@ class WeatherProvider with ChangeNotifier {
               json.decode(response.body) as Map<String, dynamic>;
           weather = Weather.fromJson(extractedData);
         } catch (error) {
-          loading = false;
+          isLoading = false;
           this.isRequestError = true;
           notifyListeners();
         }
@@ -71,16 +71,16 @@ class WeatherProvider with ChangeNotifier {
           hourlyWeather = tempHourly;
           hourly24Weather = temp24Hour;
           sevenDayWeather = tempSevenDay;
-          loading = false;
+          isLoading = false;
           notifyListeners();
         } catch (error) {
-          loading = false;
+          isLoading = false;
           this.isRequestError = true;
           notifyListeners();
           throw error;
         }
       } else {
-        loading = false;
+        isLoading = false;
         isLocationError = true;
         notifyListeners();
       }
@@ -88,7 +88,7 @@ class WeatherProvider with ChangeNotifier {
   }
 
   searchWeatherData({String location}) async {
-    loading = true;
+    isLoading = true;
     isRequestError = false;
     isLocationError = false;
     Uri url = Uri.parse(
@@ -98,13 +98,13 @@ class WeatherProvider with ChangeNotifier {
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
       weather = Weather.fromJson(extractedData);
     } catch (error) {
-      loading = false;
+      isLoading = false;
       this.isRequestError = true;
       notifyListeners();
       throw error;
     }
-    var latitude = weather.lat;
-    var longitude = weather.long;
+    var latitude = weather.latitude;
+    var longitude = weather.longitude;
     print(latitude);
     print(longitude);
     Uri dailyUrl = Uri.parse(
@@ -140,10 +140,10 @@ class WeatherProvider with ChangeNotifier {
       hourlyWeather = tempHourly;
       hourly24Weather = temp24Hour;
       sevenDayWeather = tempSevenDay;
-      loading = false;
+      isLoading = false;
       notifyListeners();
     } catch (error) {
-      loading = false;
+      isLoading = false;
       this.isRequestError = true;
       notifyListeners();
       throw error;

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
 class Weather with ChangeNotifier {
-  var temp;
-  var tempMax;
-  var tempMin;
-  var lat;
-  var long;
+  var temperature;
+  var maxTemperature;
+  var minTemperature;
+  var latitude;
+  var longitude;
   var feelsLike;
   var pressure;
   var description;
@@ -15,11 +15,11 @@ class Weather with ChangeNotifier {
   var cityName;
 
   Weather({
-    this.temp,
-    this.tempMax,
-    this.tempMin,
-    this.lat,
-    this.long,
+    this.temperature,
+    this.maxTemperature,
+    this.minTemperature,
+    this.latitude,
+    this.longitude,
     this.feelsLike,
     this.pressure,
     this.description,
@@ -31,11 +31,11 @@ class Weather with ChangeNotifier {
 
   factory Weather.fromJson(Map<String, dynamic> json) {
     return Weather(
-      temp: json['main']['temp'],
-      tempMax: json['main']['temp_max'],
-      tempMin: json['main']['temp_min'],
-      lat: json['coord']['lat'],
-      long: json['coord']['lon'],
+      temperature: json['main']['temp'],
+      maxTemperature: json['main']['temp_max'],
+      minTemperature: json['main']['temp_min'],
+      latitude: json['coord']['lat'],
+      longitude: json['coord']['lon'],
       feelsLike: json['main']['feels_like'],
       pressure: json['main']['pressure'],
       description: json['weather'][0]['description'],

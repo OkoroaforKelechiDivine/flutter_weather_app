@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   backgroundColor: myContext.primaryColor,
                 ),
               )
-            : weatherData.loading
+            : weatherData.isLoading
                 ? Center(
                     child: CircularProgressIndicator(
                       backgroundColor: myContext.primaryColor,

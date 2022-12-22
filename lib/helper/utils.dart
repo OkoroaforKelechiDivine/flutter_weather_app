@@ -3,21 +3,21 @@ import 'package:flutter_weather_icons/flutter_weather_icons.dart';
 
 class UvIndex {
   static String mapUviValueToString({var uvi}) {
-    String uvIndex;
+    String weatherCondition;
     if (uvi <= 2) {
-      return uvIndex = 'Low';
+      return weatherCondition = 'Low';
     } else if (uvi <= 5) {
-      return uvIndex = 'Medium';
+      return weatherCondition = 'Medium';
     } else if (uvi <= 7) {
-      return uvIndex = 'High';
+      return weatherCondition = 'High';
     } else if (uvi <= 10) {
-      return uvIndex = 'Very High';
+      return weatherCondition = 'Very High';
     } else if (uvi >= 11) {
-      return uvIndex = 'Extreme';
+      return weatherCondition = 'Extreme';
     } else {
-      uvIndex = 'Unknown';
+      weatherCondition = 'Unknown';
     }
-    return uvIndex;
+    return weatherCondition;
   }
 }
 

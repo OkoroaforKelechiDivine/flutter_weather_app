@@ -84,6 +84,7 @@ class WeatherProvider with ChangeNotifier {
           sevenDayWeather = temperatureInSevenDays;
           isLoading = false;
           notifyListeners();
+
         } catch (error) {
           isLoading = false;
           this.isRequestError = true;
@@ -160,6 +161,7 @@ class WeatherProvider with ChangeNotifier {
       sevenDayWeather = temperatureInSevenDays;
       isLoading = false;
       notifyListeners();
+
     } catch (error) {
       isLoading = false;
       this.isRequestError = true;

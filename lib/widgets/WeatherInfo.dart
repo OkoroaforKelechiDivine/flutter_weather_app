@@ -7,8 +7,7 @@ class WeatherInfo extends StatelessWidget {
   final weatherData;
   WeatherInfo({this.weatherData});
 
-  Widget _weatherInfoBuilder(String header, String body, IconData icon,
-      double rightPad, double iconSize) {
+  Widget _weatherInfoBuilder(String header, String body, IconData icon, double rightPad, double iconSize) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: Row(

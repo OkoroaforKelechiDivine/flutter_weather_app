@@ -7,9 +7,7 @@ import './Screens/weeklyWeatherScreen.dart';
 import './Screens/homeScreen.dart';
 
 void main() {
-  runApp(
-    MyApp(),
-  );
+  runApp(MyApp(),);
 }
 
 class MyApp extends StatelessWidget {

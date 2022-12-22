@@ -29,19 +29,16 @@ class WeatherProvider with ChangeNotifier {
     // request weather service location
     await Location().requestService().then((value) async {
       if (value) {
-        final locData = await Location().getLocation();
-        var latitude = locData.latitude;
-        var longitude = locData.longitude;
+        final locationData = await Location().getLocation();
+        var latitude = locationData.latitude;
+        var longitude = locationData.longitude;
 
-        Uri url = Uri.parse(
-            'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&units=metric&appid=$apiKey');
-        Uri dailyUrl = Uri.parse(
-            'https://api.openweathermap.org/data/2.5/onecall?lat=$latitude&lon=$longitude&units=metric&exclude=minutely,current&appid=$apiKey');
+        Uri url = Uri.parse('https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&units=metric&appid=$apiKey');
+        Uri dailyUrl = Uri.parse('https://api.openweathermap.org/data/2.5/onecall?lat=$latitude&lon=$longitude&units=metric&exclude=minutely,current&appid=$apiKey');
 
         try {
           final response = await http.get(url);
-          final extractedData =
-              json.decode(response.body) as Map<String, dynamic>;
+          final extractedData = json.decode(response.body) as Map<String, dynamic>;
           weather = Weather.fromJson(extractedData);
         } catch (error) {
           isLoading = false;
@@ -55,32 +52,36 @@ class WeatherProvider with ChangeNotifier {
           currentWeather = DailyWeather.fromJson(dailyData);
 
           var hourlyTemperature = [];
-          var temperatureIn24Hour = [];
-          var tempSevenDay = [];
+          var temperatureIn24Hours = [];
+          var temperatureInSevenDays = [];
 
           List items = dailyData['daily'];
           List itemsHourly = dailyData['hourly'];
+
           hourlyTemperature = itemsHourly
               .map((item) => DailyWeather.fromHourlyJson(item))
               .toList()
               .skip(1)
               .take(3)
               .toList();
-          temperatureIn24Hour = itemsHourly
+
+          temperatureIn24Hours = itemsHourly
               .map((item) => DailyWeather.fromHourlyJson(item))
               .toList()
               .skip(1)
               .take(24)
               .toList();
-          tempSevenDay = items
+
+          temperatureInSevenDays = items
               .map((item) => DailyWeather.fromDailyJson(item))
               .toList()
               .skip(1)
               .take(7)
               .toList();
+
           hourlyWeather = hourlyTemperature;
-          hourly24Weather = temperatureIn24Hour;
-          sevenDayWeather = tempSevenDay;
+          hourly24Weather = temperatureIn24Hours;
+          sevenDayWeather = temperatureInSevenDays;
           isLoading = false;
           notifyListeners();
         } catch (error) {
@@ -101,8 +102,7 @@ class WeatherProvider with ChangeNotifier {
     isLoading = true;
     isRequestError = false;
     isLocationError = false;
-    Uri url = Uri.parse(
-        'https://api.openweathermap.org/data/2.5/weather?q=$location&units=metric&appid=$apiKey');
+    Uri url = Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=$location&units=metric&appid=$apiKey');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -113,43 +113,51 @@ class WeatherProvider with ChangeNotifier {
       notifyListeners();
       throw error;
     }
+
     var latitude = weather.latitude;
     var longitude = weather.longitude;
     print(latitude);
     print(longitude);
-    Uri dailyUrl = Uri.parse(
-        'https://api.openweathermap.org/data/2.5/onecall?lat=$latitude&lon=$longitude&units=metric&exclude=minutely,current&appid=$apiKey');
+
+    Uri dailyUrl = Uri.parse('https://api.openweathermap.org/data/2.5/onecall?lat=$latitude&lon=$longitude&units=metric&exclude=minutely,current&appid=$apiKey');
+
     try {
       final response = await http.get(dailyUrl);
       final dailyData = json.decode(response.body) as Map<String, dynamic>;
       print(dailyUrl);
       currentWeather = DailyWeather.fromJson(dailyData);
-      var tempHourly = [];
-      var temp24Hour = [];
-      var tempSevenDay = [];
+
+      var hourlyTemperature = [];
+      var temperatureIn24hours = [];
+      var temperatureInSevenDays = [];
+
       List items = dailyData['daily'];
       List itemsHourly = dailyData['hourly'];
-      tempHourly = itemsHourly
+
+      hourlyTemperature = itemsHourly
           .map((item) => DailyWeather.fromHourlyJson(item))
           .toList()
           .skip(1)
           .take(3)
           .toList();
-      temp24Hour = itemsHourly
+
+      temperatureIn24hours = itemsHourly
           .map((item) => DailyWeather.fromHourlyJson(item))
           .toList()
           .skip(1)
           .take(24)
           .toList();
-      tempSevenDay = items
+
+      temperatureInSevenDays = items
           .map((item) => DailyWeather.fromDailyJson(item))
           .toList()
           .skip(1)
           .take(7)
           .toList();
-      hourlyWeather = tempHourly;
-      hourly24Weather = temp24Hour;
-      sevenDayWeather = tempSevenDay;
+
+      hourlyWeather = hourlyTemperature;
+      hourly24Weather = temperatureIn24hours;
+      sevenDayWeather = temperatureInSevenDays;
       isLoading = false;
       notifyListeners();
     } catch (error) {

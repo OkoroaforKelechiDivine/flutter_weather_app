@@ -60,14 +60,14 @@ class _SearchBarState extends State<SearchBar> {
             top: 11,
             right: 15,
           ),
-          hintText: "Search Location",
+          hintText: "Search Location.",
         ),
         onSubmitted: (value) {
           setState(() {
-            _textController.text.isEmpty
-                ? _validate = true
+            _textController.text.isEmpty ?
+            _validate = true
                 : Provider.of<WeatherProvider>(context, listen: false)
-                    .searchWeatherData(location: value);
+                .searchWeatherData(location: value);
           });
         },
       ),

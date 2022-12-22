@@ -84,21 +84,18 @@ class SevenDayForecast extends StatelessWidget {
                           fontSize: 15,
                         ),
                       ),
-                      Text(
-                        '${wData.weather.temperature.toStringAsFixed(1)}°',
+                      Text('${wData.weather.temperature.toStringAsFixed(1)}°',
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      MapString.mapInputToWeather(
-                          '${wData.weather.currently}', context)
+                      MapString.mapInputToWeather('${wData.weather.currently}', context)
                     ],
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 20),
-                    child: MapString.mapStringToIcon(
-                        '${wData.weather.currently}', context, 45),
+                    child: MapString.mapStringToIcon('${wData.weather.currently}', context, 45),
                   ),
                 ],
               ),

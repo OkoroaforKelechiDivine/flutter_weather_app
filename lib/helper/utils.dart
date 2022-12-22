@@ -25,59 +25,41 @@ class MapString {
   static Widget mapInputToWeather(String input, BuildContext context) {
     String text2;
     switch (input) {
-      case 'Tornado':
-        text2 = 'Tornado';
+      case 'Tornado': text2 = 'Tornado';
         break;
-      case 'Thunderstorm':
-        text2 = 'Thunderstorm';
+      case 'Thunderstorm': text2 = 'Thunderstorm';
         break;
-      case 'Drizzle':
-        text2 = 'Drizzly';
+      case 'Drizzle': text2 = 'Drizzly';
         break;
-      case 'Rain':
-        text2 = 'Raining';
+      case 'Rain': text2 = 'Raining';
         break;
-      case 'Snow':
-        text2 = 'Snowing';
+      case 'Snow': text2 = 'Snowing';
         break;
-      case 'Mist':
-        text2 = 'Misty';
+      case 'Mist': text2 = 'Misty';
         break;
-      case 'fog':
-        text2 = 'Foggy';
+      case 'fog': text2 = 'Foggy';
         break;
-      case 'Smoke':
-        text2 = 'Smoky';
+      case 'Smoke': text2 = 'Smoky';
         break;
-      case 'Squall':
-        text2 = 'Squally';
+      case 'Squall': text2 = 'Squally';
         break;
-      case 'Haze':
-        text2 = 'Hazy';
+      case 'Haze': text2 = 'Hazy';
         break;
-      case 'Dust':
-        text2 = 'Dusty';
+      case 'Dust': text2 = 'Dusty';
         break;
-      case 'Sand':
-        text2 = 'Sandy';
+      case 'Sand': text2 = 'Sandy';
         break;
-      case 'Ash':
-        text2 = 'Ashy';
+      case 'Ash': text2 = 'Ashy';
         break;
-      case 'Clear':
-        text2 = "Sunny";
+      case 'Clear': text2 = "Sunny";
         break;
-      case 'Clouds':
-        text2 = "Cloudy";
+      case 'Clouds': text2 = "Cloudy";
         break;
-      default:
-        text2 = "No Info";
+      default: text2 = "No Info";
     }
     return Text(
       text2,
-      style: TextStyle(
-        fontSize: 15,
-      ),
+      style: TextStyle(fontSize: 15,),
     );
   }
 

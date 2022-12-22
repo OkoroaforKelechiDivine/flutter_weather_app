@@ -47,13 +47,11 @@ class HourlyForecast extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 25),
-                  child: MapString.mapStringToIcon(
-                      '${weather.condition}', context, 40),
+                  child: MapString.mapStringToIcon('${weather.condition}', context, 40),
                 ),
                 Container(
                   width: 80,
-                  child: Text(
-                    "${weather.dailyTemp.toStringAsFixed(1)}°C",
+                  child: Text("${weather.dailyTemp.toStringAsFixed(1)}°C",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,
@@ -72,6 +70,7 @@ class HourlyForecast extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 15),
       width: MediaQuery.of(context).size.width,
@@ -83,9 +82,8 @@ class HourlyForecast extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 5),
-                child: Text(
-                  'Next 3 Hours',
-                  style: TextStyle(
+                child: Text('Next 3 Hours', style:
+                TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.bold,
                   ),

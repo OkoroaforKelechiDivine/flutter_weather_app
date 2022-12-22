@@ -36,8 +36,7 @@ class HourlyScreen extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Text(
-            '${weather.dailyTemp.toStringAsFixed(1)}°',
+          Text('${weather.dailyTemp.toStringAsFixed(1)}°',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w400,
@@ -56,14 +55,13 @@ class HourlyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final weatherData = Provider.of<WeatherProvider>(context);
     final mediaQuery = MediaQuery.of(context);
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.transparent,
-          title: Text(
-            'Next 24 Hours',
-            style: TextStyle(color: Colors.black),
+          title: Text('Next 24 Hours', style: TextStyle(color: Colors.black),
           ),
         ),
         body: Container(

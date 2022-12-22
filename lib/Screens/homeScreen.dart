@@ -55,91 +55,92 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        body: _isLoading
-            ? Center(
-                child: CircularProgressIndicator(
-                  backgroundColor: myContext.primaryColor,
-                ),
-              )
-            : weatherData.isLoading
-                ? Center(
-                    child: CircularProgressIndicator(
-                      backgroundColor: myContext.primaryColor,
-                    ),
-                  )
-                : weatherData.isLocationError
-                    ? LocationError()
-                    : Column(
+        body: _isLoading ?
+        Center(
+          child: CircularProgressIndicator(
+            backgroundColor: myContext.primaryColor,
+          ),
+        ) :
+        weatherData.isLoading ?
+        Center(
+          child: CircularProgressIndicator(
+            backgroundColor: myContext.primaryColor,
+          ),
+        ) :
+        weatherData.isLocationError ?
+        LocationError() :
+        Column(
+          children: [
+            SearchBar(),
+            SmoothPageIndicator(
+              controller: _pageController,
+              count: 2,
+              effect: ExpandingDotsEffect(
+                activeDotColor:
+                myContext.primaryColor,
+                dotHeight: 6,
+                dotWidth: 6,
+              ),
+            ),
+            weatherData.isRequestError ?
+            RequestError() :
+            Expanded(
+              child:
+              PageView(
+                controller: _pageController,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    width: mediaQuery.size.width,
+                    child: RefreshIndicator(
+                      onRefresh: () => _refreshData(context),
+                      backgroundColor: Colors.blue,
+                      child: ListView(
                         children: [
-                          SearchBar(),
-                          SmoothPageIndicator(
-                            controller: _pageController,
-                            count: 2,
-                            effect: ExpandingDotsEffect(
-                              activeDotColor: myContext.primaryColor,
-                              dotHeight: 6,
-                              dotWidth: 6,
-                            ),
+                          FadeIn(
+                              delay: 0,
+                              child: MainWeather(
+                                  weatherData: weatherData)),
+                          FadeIn(
+                            delay: 0.33,
+                            child: WeatherInfo(
+                                weatherData: weatherData
+                                    .currentWeather),
                           ),
-                          weatherData.isRequestError
-                              ? RequestError()
-                              : Expanded(
-                                  child: PageView(
-                                    controller: _pageController,
-                                    children: [
-                                      Container(
-                                        padding: const EdgeInsets.all(10),
-                                        width: mediaQuery.size.width,
-                                        child: RefreshIndicator(
-                                          onRefresh: () =>
-                                              _refreshData(context),
-                                          backgroundColor: Colors.blue,
-                                          child: ListView(
-                                            children: [
-                                              FadeIn(
-                                                  delay: 0,
-                                                  child: MainWeather(
-                                                      wData: weatherData)),
-                                              FadeIn(
-                                                delay: 0.33,
-                                                child: WeatherInfo(
-                                                    wData: weatherData
-                                                        .currentWeather),
-                                              ),
-                                              FadeIn(
-                                                delay: 0.66,
-                                                child: HourlyForecast(
-                                                    weatherData.hourlyWeather),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        height: mediaQuery.size.height,
-                                        width: mediaQuery.size.width,
-                                        child: ListView(
-                                          children: [
-                                            FadeIn(
-                                              delay: 0.33,
-                                              child: SevenDayForecast(
-                                                wData: weatherData,
-                                                dWeather:
-                                                    weatherData.sevenDayWeather,
-                                              ),
-                                            ),
-                                            FadeIn(
-                                                delay: 0.66,
-                                                child: WeatherDetail(
-                                                    wData: weatherData)),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                          FadeIn(
+                            delay: 0.66,
+                            child: HourlyForecast(
+                                weatherData.hourlyWeather),
+                          ),
                         ],
                       ),
+                    ),
+                  ),
+                  Container(
+                    height: mediaQuery.size.height,
+                    width: mediaQuery.size.width,
+                    child: ListView(
+                      children: [
+                        FadeIn(
+                          delay: 0.33,
+                          child: SevenDayForecast(
+                            wData: weatherData,
+                            dWeather:
+                            weatherData.sevenDayWeather,
+                          ),
+                        ),
+                        FadeIn(
+                            delay: 0.66,
+                            child: WeatherDetail(
+                                wData: weatherData)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

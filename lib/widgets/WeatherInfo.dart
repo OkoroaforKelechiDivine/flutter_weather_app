@@ -4,8 +4,8 @@ import 'package:flutter_weather_icons/flutter_weather_icons.dart';
 import '../helper/utils.dart';
 
 class WeatherInfo extends StatelessWidget {
-  final wData;
-  WeatherInfo({this.wData});
+  final weatherData;
+  WeatherInfo({this.weatherData});
 
   Widget _weatherInfoBuilder(String header, String body, IconData icon,
       double rightPad, double iconSize) {
@@ -68,7 +68,7 @@ class WeatherInfo extends StatelessWidget {
             SizedBox(
               child: _weatherInfoBuilder(
                 'Precipitation',
-                '${wData.precip}%',
+                '${weatherData.precip}%',
                 WeatherIcons.wiRaindrops,
                 0,
                 50,
@@ -82,7 +82,7 @@ class WeatherInfo extends StatelessWidget {
             SizedBox(
               child: _weatherInfoBuilder(
                 'UV Index',
-                UvIndex.mapUviValueToString(uvi: wData.uvi),
+                UvIndex.mapUviValueToString(uvi: weatherData.uvi),
                 WeatherIcons.wiDaySunny,
                 15,
                 30,

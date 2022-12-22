@@ -4,9 +4,9 @@ import 'package:intl/intl.dart';
 import '../helper/utils.dart';
 
 class MainWeather extends StatelessWidget {
-  final wData;
+  final weatherData;
 
-  MainWeather({this.wData});
+  MainWeather({this.weatherData});
 
   final TextStyle _style1 = TextStyle(
     fontWeight: FontWeight.w700,
@@ -30,7 +30,7 @@ class MainWeather extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.location_on_outlined),
-              Text('${wData.weather.cityName}', style: _style1),
+              Text('${weatherData.weather.cityName}', style: _style1),
             ],
           ),
           SizedBox(height: 5),
@@ -45,10 +45,10 @@ class MainWeather extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(bottom: 25, right: 25),
                 child: MapString.mapStringToIcon(
-                    '${wData.weather.currently}', context, 55),
+                    '${weatherData.weather.currently}', context, 55),
               ),
               Text(
-                '${wData.weather.temperature.toStringAsFixed(0)}°C',
+                '${weatherData.weather.temperature.toStringAsFixed(0)}°C',
                 style: TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.w600,
@@ -58,12 +58,12 @@ class MainWeather extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            '${wData.weather.maxTemperature.toStringAsFixed(0)}°/ ${wData.weather.minTemperature.toStringAsFixed(0)}° Feels like ${wData.weather.feelsLike.toStringAsFixed(0)}°',
+            '${weatherData.weather.maxTemperature.toStringAsFixed(0)}°/ ${weatherData.weather.minTemperature.toStringAsFixed(0)}° Feels like ${weatherData.weather.feelsLike.toStringAsFixed(0)}°',
             style: _style1.copyWith(fontSize: 19),
           ),
           SizedBox(height: 5),
           Text(
-            toBeginningOfSentenceCase('${wData.weather.description}'),
+            toBeginningOfSentenceCase('${weatherData.weather.description}'),
             style: _style1.copyWith(fontSize: 19),
           ),
         ],

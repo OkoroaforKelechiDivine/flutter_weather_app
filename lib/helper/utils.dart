@@ -63,51 +63,39 @@ class MapString {
     );
   }
 
-  static Icon mapStringToIcon(
-      String input, BuildContext context, double iconSize) {
+  static Icon mapStringToIcon(String input, BuildContext context, double iconSize) {
     IconData myIcon;
+
     switch (input) {
-      case 'Thunderstorm':
-        myIcon = WeatherIcons.wiThunderstorm;
+      case 'Thunderstorm': myIcon = WeatherIcons.wiThunderstorm;
         break;
-      case 'Drizzle':
-        myIcon = WeatherIcons.wiSprinkle;
+      case 'Drizzle': myIcon = WeatherIcons.wiSprinkle;
         break;
-      case 'Rain':
-        myIcon = WeatherIcons.wiRain;
+      case 'Rain': myIcon = WeatherIcons.wiRain;
         break;
-      case 'Snow':
-        myIcon = WeatherIcons.wiSnow;
+      case 'Snow': myIcon = WeatherIcons.wiSnow;
         break;
-      case 'Clear':
-        myIcon = WeatherIcons.wiDaySunny;
+      case 'Clear': myIcon = WeatherIcons.wiDaySunny;
         break;
-      case 'Clouds':
-        myIcon = WeatherIcons.wiCloudy;
+      case 'Clouds': myIcon = WeatherIcons.wiCloudy;
         break;
-      case 'Mist':
-        myIcon = WeatherIcons.wiFog;
+      case 'Mist': myIcon = WeatherIcons.wiFog;
         break;
-      case 'fog':
-        myIcon = WeatherIcons.wiFog;
+      case 'fog': myIcon = WeatherIcons.wiFog;
         break;
-      case 'Smoke':
-        myIcon = WeatherIcons.wiSmoke;
+      case 'Smoke': myIcon = WeatherIcons.wiSmoke;
         break;
+
       case 'Haze':
       case 'Dust':
-      case 'Sand':
-        myIcon = WeatherIcons.wiSandstorm;
+      case 'Sand': myIcon = WeatherIcons.wiSandstorm;
         break;
-      case 'Ash':
-        myIcon = WeatherIcons.wiVolcano;
+      case 'Ash': myIcon = WeatherIcons.wiVolcano;
         break;
       case 'Squall':
-      case 'Tornado':
-        myIcon = WeatherIcons.wiHurricaneWarning;
+      case 'Tornado': myIcon = WeatherIcons.wiHurricaneWarning;
         break;
-      default:
-        myIcon = WeatherIcons.wiNa;
+      default: myIcon = WeatherIcons.wiNa;
     }
     return Icon(
       myIcon,

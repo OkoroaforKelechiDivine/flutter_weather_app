@@ -9,7 +9,7 @@ class WeeklyScreen extends StatelessWidget {
   static const routeName = '/weeklyScreen';
 
   Widget dailyWidget(dynamic weather, BuildContext context) {
-    final dayOfWeek = DateFormat('EEEEE').format(weather.date);
+    final daysOfTheWeek = DateFormat('EEEEE').format(weather.date);
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -22,7 +22,7 @@ class WeeklyScreen extends StatelessWidget {
           Row(
             children: [
               Text(
-                dayOfWeek ?? '',
+                daysOfTheWeek ?? '',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -30,8 +30,7 @@ class WeeklyScreen extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Text(
-                '${weather.dailyTemp.toStringAsFixed(1)}°',
+              Text('${weather.dailyTemp.toStringAsFixed(1)}°',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
@@ -39,8 +38,7 @@ class WeeklyScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 15, bottom: 15),
-                child:
-                    MapString.mapStringToIcon(weather.condition, context, 25),
+                child: MapString.mapStringToIcon(weather.condition, context, 25),
               ),
             ],
           ),
@@ -60,9 +58,7 @@ class WeeklyScreen extends StatelessWidget {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.transparent,
-          title: Text(
-            'Next 7 Days',
-            style: TextStyle(color: Colors.black),
+          title: Text('Next 7 Days', style: TextStyle(color: Colors.black),
           ),
         ),
         body: Container(

@@ -12,7 +12,6 @@ class WeatherInfo extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
-
         children: [
           Padding(
             padding: EdgeInsets.only(bottom: 15, right: rightPad),

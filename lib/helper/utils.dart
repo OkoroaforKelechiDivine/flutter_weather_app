@@ -65,7 +65,6 @@ class MapString {
 
   static Icon mapStringToIcon(String input, BuildContext context, double iconSize) {
     IconData myIcon;
-
     switch (input) {
       case 'Thunderstorm': myIcon = WeatherIcons.wiThunderstorm;
         break;

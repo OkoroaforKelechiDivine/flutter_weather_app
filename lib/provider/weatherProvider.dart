@@ -83,6 +83,7 @@ class WeatherProvider with ChangeNotifier {
           hourly24Weather = temperatureIn24Hours;
           sevenDayWeather = temperatureInSevenDays;
           isLoading = false;
+
           notifyListeners();
 
         } catch (error) {

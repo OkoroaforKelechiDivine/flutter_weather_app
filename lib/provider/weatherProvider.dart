@@ -113,7 +113,6 @@ class WeatherProvider with ChangeNotifier {
       isLoading = false;
       this.isRequestError = true;
       notifyListeners();
-
       throw error;
     }
 

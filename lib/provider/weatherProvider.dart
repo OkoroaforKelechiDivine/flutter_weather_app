@@ -116,7 +116,6 @@ class WeatherProvider with ChangeNotifier {
       throw error;
     }
 
-
     var latitude = weather.latitude;
     var longitude = weather.longitude;
     print(latitude);

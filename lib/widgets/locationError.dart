@@ -54,8 +54,7 @@ class _LocationErrorState extends State<LocationError> {
             onPressed: () async {
               await location.requestService().then((value) async {
                 if (value) {
-                  await Provider.of<WeatherProvider>(context, listen: false)
-                      .getWeatherData();
+                  await Provider.of<WeatherProvider>(context, listen: false).getWeatherData();
                 } else
                   showDialog(
                     context: context,

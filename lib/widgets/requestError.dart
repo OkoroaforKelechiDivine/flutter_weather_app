@@ -15,7 +15,7 @@ class RequestError extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            'No Search .',
+            'No Search.',
             style: TextStyle(
               color: Colors.black,
               fontSize: 30,

@@ -49,10 +49,7 @@ class _SearchBarState extends State<SearchBar> {
           enabledBorder: InputBorder.none,
           icon: Padding(
             padding: const EdgeInsets.only(left: 10),
-            child: Icon(
-              Icons.search,
-              color: Colors.black,
-            ),
+            child: Icon(Icons.search, color: Colors.black,),
           ),
           contentPadding: EdgeInsets.only(
             left: 0,

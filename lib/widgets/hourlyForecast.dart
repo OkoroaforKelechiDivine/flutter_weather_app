@@ -51,7 +51,7 @@ class HourlyForecast extends StatelessWidget {
                 ),
                 Container(
                   width: 80,
-                  child: Text("${weather.dailyTemp.toStringAsFixed(1)}°C",
+                  child: Text("${weather.dailyTemperature.toStringAsFixed(1)}°C",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 20,

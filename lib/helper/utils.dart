@@ -23,83 +23,80 @@ class UvIndex {
 
 class MapString {
   static Widget mapInputToWeather(String input, BuildContext context) {
-    String text2;
+    String textInput;
     switch (input) {
-      case 'Tornado': text2 = 'Tornado';
+      case 'Tornado': textInput = 'Tornado';
         break;
-      case 'Thunderstorm': text2 = 'Thunderstorm';
+      case 'Thunderstorm': textInput = 'Thunderstorm';
         break;
-      case 'Drizzle': text2 = 'Drizzly';
+      case 'Drizzle': textInput = 'Drizzly';
         break;
-      case 'Rain': text2 = 'Raining';
+      case 'Rain': textInput = 'Raining';
         break;
-      case 'Snow': text2 = 'Snowing';
+      case 'Snow': textInput = 'Snowing';
         break;
-      case 'Mist': text2 = 'Misty';
+      case 'Mist': textInput = 'Misty';
         break;
-      case 'fog': text2 = 'Foggy';
+      case 'fog': textInput = 'Foggy';
         break;
-      case 'Smoke': text2 = 'Smoky';
+      case 'Smoke': textInput = 'Smoky';
         break;
-      case 'Squall': text2 = 'Squally';
+      case 'Squall': textInput = 'Squally';
         break;
-      case 'Haze': text2 = 'Hazy';
+      case 'Haze': textInput = 'Hazy';
         break;
-      case 'Dust': text2 = 'Dusty';
+      case 'Dust': textInput = 'Dusty';
         break;
-      case 'Sand': text2 = 'Sandy';
+      case 'Sand': textInput = 'Sandy';
         break;
-      case 'Ash': text2 = 'Ashy';
+      case 'Ash': textInput = 'Ashy';
         break;
-      case 'Clear': text2 = "Sunny";
+      case 'Clear': textInput = "Sunny";
         break;
-      case 'Clouds': text2 = "Cloudy";
+      case 'Clouds': textInput = "Cloudy";
         break;
-      default: text2 = "No Info";
+      default: textInput = "No Info";
     }
     return Text(
-      text2,
-      style: TextStyle(fontSize: 15,),
+      textInput, style: TextStyle(fontSize: 15,),
     );
   }
 
   static Icon mapStringToIcon(String input, BuildContext context, double iconSize) {
-    IconData myIcon;
+    IconData inputIcon;
     switch (input) {
-      case 'Thunderstorm': myIcon = WeatherIcons.wiThunderstorm;
+      case 'Thunderstorm': inputIcon = WeatherIcons.wiThunderstorm;
         break;
-      case 'Drizzle': myIcon = WeatherIcons.wiSprinkle;
+      case 'Drizzle': inputIcon = WeatherIcons.wiSprinkle;
         break;
-      case 'Rain': myIcon = WeatherIcons.wiRain;
+      case 'Rain': inputIcon = WeatherIcons.wiRain;
         break;
-      case 'Snow': myIcon = WeatherIcons.wiSnow;
+      case 'Snow': inputIcon = WeatherIcons.wiSnow;
         break;
-      case 'Clear': myIcon = WeatherIcons.wiDaySunny;
+      case 'Clear': inputIcon = WeatherIcons.wiDaySunny;
         break;
-      case 'Clouds': myIcon = WeatherIcons.wiCloudy;
+      case 'Clouds': inputIcon = WeatherIcons.wiCloudy;
         break;
-      case 'Mist': myIcon = WeatherIcons.wiFog;
+      case 'Mist': inputIcon = WeatherIcons.wiFog;
         break;
-      case 'fog': myIcon = WeatherIcons.wiFog;
+      case 'fog': inputIcon = WeatherIcons.wiFog;
         break;
-      case 'Smoke': myIcon = WeatherIcons.wiSmoke;
+      case 'Smoke': inputIcon = WeatherIcons.wiSmoke;
         break;
 
       case 'Haze':
       case 'Dust':
-      case 'Sand': myIcon = WeatherIcons.wiSandstorm;
+      case 'Sand': inputIcon = WeatherIcons.wiSandstorm;
         break;
-      case 'Ash': myIcon = WeatherIcons.wiVolcano;
+      case 'Ash': inputIcon = WeatherIcons.wiVolcano;
         break;
       case 'Squall':
-      case 'Tornado': myIcon = WeatherIcons.wiHurricaneWarning;
+      case 'Tornado': inputIcon = WeatherIcons.wiHurricaneWarning;
         break;
-      default: myIcon = WeatherIcons.wiNa;
+      default: inputIcon = WeatherIcons.wiNa;
     }
     return Icon(
-      myIcon,
-      size: iconSize,
-      color: Theme.of(context).primaryColor,
+      inputIcon, size: iconSize, color: Theme.of(context).primaryColor,
     );
   }
 }

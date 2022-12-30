@@ -30,7 +30,7 @@ class WeeklyScreen extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Text('${weather.dailyTemp.toStringAsFixed(1)}°',
+              Text('${weather.dailyTemperature.toStringAsFixed(1)}°',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
@@ -65,7 +65,7 @@ class WeeklyScreen extends StatelessWidget {
           height: mediaQuery.size.height,
           width: mediaQuery.size.width,
           child: Column(
-            children: weatherData.sevenDayWeather
+            children: weatherData.sevenDaysWeather
                 .map((item) => dailyWidget(item, context))
                 .toList(),
           ),

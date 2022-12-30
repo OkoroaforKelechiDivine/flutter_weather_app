@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 
 class DailyWeather with ChangeNotifier {
-  var dailyTemp;
+  var dailyTemperature;
   var condition;
   var date;
-  var precip;
+  var precipitation;
   var uvi;
 
   DailyWeather({
-    this.dailyTemp,
+    this.dailyTemperature,
     this.condition,
     this.date,
-    this.precip,
+    this.precipitation,
     this.uvi,
   });
 
@@ -20,14 +20,14 @@ class DailyWeather with ChangeNotifier {
     final calculatePrecipitation = precipitationData * 100;
     final precipitation = calculatePrecipitation.toStringAsFixed(0);
     return DailyWeather(
-      precip: precipitation,
+      precipitation: precipitation,
       uvi: json['daily'][0]['uvi'],
     );
   }
 
   static DailyWeather fromDailyJson(dynamic json) {
     return DailyWeather(
-      dailyTemp: json['temp']['day'],
+      dailyTemperature: json['temp']['day'],
       condition: json['weather'][0]['main'],
       date: DateTime.fromMillisecondsSinceEpoch(json['dt'] * 1000, isUtc: true),
     );
@@ -35,7 +35,7 @@ class DailyWeather with ChangeNotifier {
 
   static DailyWeather fromHourlyJson(dynamic json) {
     return DailyWeather(
-      dailyTemp: json['temp'],
+      dailyTemperature: json['temp'],
       condition: json['weather'][0]['main'],
       date: DateTime.fromMillisecondsSinceEpoch(json['dt'] * 1000),
     );

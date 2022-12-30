@@ -27,16 +27,10 @@ class WeatherInfo extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FittedBox(
-                child: Text(
-                  header,
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
-                ),
+                child: Text(header, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),),
               ),
               FittedBox(
-                child: Text(
-                  body,
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
-                ),
+                child: Text(body, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 15),),
               ),
             ],
           )
@@ -66,13 +60,7 @@ class WeatherInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              child: _weatherInfoBuilder(
-                'Precipitation',
-                '${weatherData.precipitation}%',
-                WeatherIcons.wiRaindrops,
-                0,
-                50,
-              ),
+              child: _weatherInfoBuilder('Precipitation', '${weatherData.precipitation}%', WeatherIcons.wiRaindrops, 0, 50,),
             ),
             VerticalDivider(
               color: Colors.black,
@@ -80,12 +68,8 @@ class WeatherInfo extends StatelessWidget {
               endIndent: 25,
             ),
             SizedBox(
-              child: _weatherInfoBuilder(
-                'UV Index',
-                UvIndex.mapUviValueToString(uvi: weatherData.uvi),
-                WeatherIcons.wiDaySunny,
-                15,
-                30,
+              child: _weatherInfoBuilder('UV Index', UvIndex.mapUviValueToString(uvi: weatherData.uvi), WeatherIcons.wiDaySunny,
+                15, 30,
               ),
             ),
           ],

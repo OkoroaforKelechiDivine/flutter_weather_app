@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         FadeIn(
                             delay: 0.66,
                             child: WeatherDetail(
-                                wData: weatherData)),
+                                weatherData: weatherData)),
                       ],
                     ),
                   ),

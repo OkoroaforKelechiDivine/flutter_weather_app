@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_weather_icons/flutter_weather_icons.dart';
 
 class WeatherDetail extends StatelessWidget {
-  final wData;
+  final weatherData;
 
-  WeatherDetail({this.wData});
+  WeatherDetail({this.weatherData});
 
   Widget _gridWeatherBuilder(String header, String body, IconData icon) {
     return Container(
@@ -67,7 +67,7 @@ class WeatherDetail extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 20),
           child: Text(
-            'Today Details',
+            'Today Details.',
             style: TextStyle(
               fontSize: 17,
               fontWeight: FontWeight.bold,
@@ -86,10 +86,10 @@ class WeatherDetail extends StatelessWidget {
               mainAxisSpacing: 15,
             ),
             children: [
-              _gridWeatherBuilder('${wData.weather.humidity}%', 'Humidity', WeatherIcons.wiRaindrop),
-              _gridWeatherBuilder('${wData.weather.windSpeed} km/h', 'Wind', WeatherIcons.wiStrongWind),
-              _gridWeatherBuilder('${wData.weather.feelsLike.toStringAsFixed(1)}°C', 'Feels Like', WeatherIcons.wiCelsius),
-              _gridWeatherBuilder('${wData.weather.pressure} hPa', 'Pressure', WeatherIcons.wiBarometer),
+              _gridWeatherBuilder('${weatherData.weather.humidity}%', 'Humidity', WeatherIcons.wiRaindrop),
+              _gridWeatherBuilder('${weatherData.weather.windSpeed} km/h', 'Wind', WeatherIcons.wiStrongWind),
+              _gridWeatherBuilder('${weatherData.weather.feelsLike.toStringAsFixed(1)}°C', 'Feels Like', WeatherIcons.wiCelsius),
+              _gridWeatherBuilder('${weatherData.weather.pressure} hPa', 'Pressure', WeatherIcons.wiBarometer),
             ],
           ),
         ),

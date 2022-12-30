@@ -91,7 +91,7 @@ class HourlyForecast extends StatelessWidget {
               ),
               TextButton(
                 child: Text(
-                  'See More',
+                  'See More...',
                   style: TextStyle(color: Colors.blue),
                 ),
                 onPressed: () {

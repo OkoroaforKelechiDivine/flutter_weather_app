@@ -126,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: SevenDayForecast(
                             wData: weatherData,
                             dWeather:
-                            weatherData.sevenDayWeather,
+                            weatherData.sevenDaysWeather,
                           ),
                         ),
                         FadeIn(

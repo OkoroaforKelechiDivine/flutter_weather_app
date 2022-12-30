@@ -62,9 +62,7 @@ class _SearchBarState extends State<SearchBar> {
         onSubmitted: (value) {
           setState(() {
             _textController.text.isEmpty ?
-            _validate = true
-                : Provider.of<WeatherProvider>(context, listen: false)
-                .searchWeatherData(location: value);
+            _validate = true : Provider.of<WeatherProvider>(context, listen: false).searchWeatherData(location: value);
           });
         },
       ),

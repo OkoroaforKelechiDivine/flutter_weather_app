@@ -125,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           delay: 0.33,
                           child: SevenDayForecast(
                             wData: weatherData,
-                            dWeather:
+                            dailyWeather:
                             weatherData.sevenDaysWeather,
                           ),
                         ),

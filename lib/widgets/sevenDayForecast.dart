@@ -6,9 +6,9 @@ import '../models/dailyWeather.dart';
 
 class SevenDayForecast extends StatelessWidget {
   final wData;
-  final List<DailyWeather> dWeather;
+  final List<DailyWeather> dailyWeather;
 
-  SevenDayForecast({this.wData, this.dWeather});
+  SevenDayForecast({this.wData, this.dailyWeather});
 
   Widget dailyWidget(dynamic weather, BuildContext context) {
     final dayOfWeek = DateFormat('EEE').format(weather.date);
@@ -30,9 +30,7 @@ class SevenDayForecast extends StatelessWidget {
             child:
             MapString.mapStringToIcon('${weather.condition}', context, 35),
           ),
-          Text(
-            '${weather.condition}',
-          ),
+          Text('${weather.condition}',),
         ],
       ),
     );
@@ -103,10 +101,7 @@ class SevenDayForecast extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: dWeather
-                      .map((item) => dailyWidget(item, context))
-                      .toList(),
-                ),
+                  children: dailyWeather.map((item) => dailyWidget(item, context)).toList(),),
               ),
             ],
           ),

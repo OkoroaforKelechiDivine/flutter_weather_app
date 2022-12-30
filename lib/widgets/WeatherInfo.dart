@@ -68,7 +68,7 @@ class WeatherInfo extends StatelessWidget {
             SizedBox(
               child: _weatherInfoBuilder(
                 'Precipitation',
-                '${weatherData.precip}%',
+                '${weatherData.precipitation}%',
                 WeatherIcons.wiRaindrops,
                 0,
                 50,

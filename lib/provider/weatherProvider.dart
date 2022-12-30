@@ -14,8 +14,8 @@ class WeatherProvider with ChangeNotifier {
 
   List<DailyWeather> hourlyWeather = [];
   List<DailyWeather> hourly24Weather = [];
-  List<DailyWeather> fiveDayWeather = [];
-  List<DailyWeather> sevenDayWeather = [];
+  List<DailyWeather> fiveDaysWeather = [];
+  List<DailyWeather> sevenDaysWeather = [];
 
   bool isLoading;
   bool isRequestError = false;
@@ -81,7 +81,7 @@ class WeatherProvider with ChangeNotifier {
 
           hourlyWeather = hourlyTemperature;
           hourly24Weather = temperatureIn24Hours;
-          sevenDayWeather = temperatureInSevenDays;
+          sevenDaysWeather = temperatureInSevenDays;
           isLoading = false;
 
           notifyListeners();
@@ -159,7 +159,7 @@ class WeatherProvider with ChangeNotifier {
 
       hourlyWeather = hourlyTemperature;
       hourly24Weather = temperatureIn24hours;
-      sevenDayWeather = temperatureInSevenDays;
+      sevenDaysWeather = temperatureInSevenDays;
       isLoading = false;
       notifyListeners();
 

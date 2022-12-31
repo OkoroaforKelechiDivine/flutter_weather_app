@@ -20,17 +20,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           appBarTheme: AppBarTheme(
-            iconTheme: IconThemeData(
-              color: Colors.black,
-            ),
+            iconTheme: IconThemeData(color: Colors.black,),
             elevation: 0,
           ),
           scaffoldBackgroundColor: Colors.white,
           primaryColor: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          colorScheme:
-              ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
-        ),
+          colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white),),
         home: HomeScreen(),
         routes: {
           WeeklyScreen.routeName: (myCtx) => WeeklyScreen(),

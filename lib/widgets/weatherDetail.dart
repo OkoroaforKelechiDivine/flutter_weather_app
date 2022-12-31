@@ -48,9 +48,7 @@ class WeatherDetail extends StatelessWidget {
               ),
               FittedBox(
                 child: Text(
-                  body,
-                  style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
-                ),
+                  body, style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15),),
               ),
             ],
           )

@@ -20,7 +20,6 @@ class WeatherDetail extends StatelessWidget {
           ),
         ],
       ),
-
       padding: EdgeInsets.all(15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,

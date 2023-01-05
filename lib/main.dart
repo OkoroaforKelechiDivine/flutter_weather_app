@@ -13,9 +13,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    int minimumWagesAndSalariesOfADeadManIs200k = 0;
-    minimumWagesAndSalariesOfADeadManIs200k.toString();
-    print(minimumWagesAndSalariesOfADeadManIs200k);
     return ChangeNotifierProvider(
       create: (context) => WeatherProvider(),
       child: MaterialApp(

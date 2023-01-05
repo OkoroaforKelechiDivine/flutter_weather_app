@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
         routes: {
           WeeklyScreen.routeName: (myCtx) => WeeklyScreen(),
           HourlyScreen.routeName: (myCtx) => HourlyScreen(),
+
         },
       ),
     );

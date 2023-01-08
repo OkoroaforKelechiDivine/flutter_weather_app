@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _isLoading = false;
   }
 
+
   Future<void> _refreshData(BuildContext context) async {
     await Provider.of<WeatherProvider>(context, listen: false).getWeatherData();
   }

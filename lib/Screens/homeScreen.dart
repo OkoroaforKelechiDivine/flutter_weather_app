@@ -46,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
     await Provider.of<WeatherProvider>(context, listen: false).getWeatherData();
   }
 
-
   @override
   Widget build(BuildContext context) {
     final weatherData = Provider.of<WeatherProvider>(context);

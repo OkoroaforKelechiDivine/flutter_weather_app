@@ -56,6 +56,7 @@ class _LocationErrorState extends State<LocationError> {
                 if (value) {
                   await Provider.of<WeatherProvider>(context, listen: false).getWeatherData();
                 } else
+
                   showDialog(
                     context: context,
                     barrierDismissible: false,

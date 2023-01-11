@@ -59,6 +59,7 @@ class _LocationErrorState extends State<LocationError> {
                   showDialog(
                     context: context,
 
+
                     barrierDismissible: false,
                     builder: (context) {
                       return AlertDialog(

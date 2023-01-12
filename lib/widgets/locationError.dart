@@ -10,7 +10,6 @@ class LocationError extends StatefulWidget {
 }
 
 
-
 class _LocationErrorState extends State<LocationError> {
   @override
   Widget build(BuildContext context) {

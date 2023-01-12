@@ -17,7 +17,6 @@ class _LocationErrorState extends State<LocationError> {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-
         children: [
           Icon(
             Icons.location_off,

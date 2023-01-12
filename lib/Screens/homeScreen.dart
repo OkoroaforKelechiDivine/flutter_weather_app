@@ -50,6 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final weatherData = Provider.of<WeatherProvider>(context);
     final myContext = Theme.of(context);
+    final fontColor = Color.fromRGBO(2, 3, 5, 20);
     final mediaQuery = MediaQuery.of(context);
 
     return SafeArea(

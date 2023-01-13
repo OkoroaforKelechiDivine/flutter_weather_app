@@ -90,6 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 controller: _pageController,
                 children: [
                   Container(
+
                     padding: const EdgeInsets.all(10),
                     width: mediaQuery.size.width,
                     child: RefreshIndicator(

@@ -72,7 +72,6 @@ class _HomeScreenState extends State<HomeScreen> {
         Column(
           children: [
             SearchBar(),
-
             SmoothPageIndicator(
               controller: _pageController,
               count: 2,

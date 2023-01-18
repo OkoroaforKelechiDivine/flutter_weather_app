@@ -36,6 +36,7 @@ class Weather with ChangeNotifier {
       minTemperature: json['main']['temp_min'],
       latitude: json['coord']['lat'],
       longitude: json['coord']['lon'],
+
       feelsLike: json['main']['feels_like'],
       pressure: json['main']['pressure'],
       description: json['weather'][0]['description'],

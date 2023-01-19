@@ -27,6 +27,7 @@ class Weather with ChangeNotifier {
     this.humidity,
     this.windSpeed,
 
+
     this.cityName,
   });
 

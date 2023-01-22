@@ -42,6 +42,7 @@ class _LocationErrorState extends State<LocationError> {
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
               ),
+
             ),
           ),
           ElevatedButton(

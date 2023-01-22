@@ -39,6 +39,7 @@ class _LocationErrorState extends State<LocationError> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
+
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
               ),

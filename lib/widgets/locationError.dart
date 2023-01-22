@@ -40,7 +40,6 @@ class _LocationErrorState extends State<LocationError> {
               style: TextStyle(
                 color: Colors.black,
 
-
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
               ),

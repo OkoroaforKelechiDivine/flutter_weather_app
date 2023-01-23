@@ -19,7 +19,6 @@ class DailyWeather with ChangeNotifier {
     final precipitationData = json['daily'][0]['pop'];
     final calculatePrecipitation = precipitationData * 100;
     final precipitation = calculatePrecipitation.toStringAsFixed(0);
-
     return DailyWeather(
       precipitation: precipitation,
       uvi: json['daily'][0]['uvi'],

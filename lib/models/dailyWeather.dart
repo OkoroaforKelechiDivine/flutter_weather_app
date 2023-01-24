@@ -26,6 +26,7 @@ class DailyWeather with ChangeNotifier {
   }
 
 
+
   static DailyWeather fromDailyJson(dynamic json) {
     return DailyWeather(
       dailyTemperature: json['temp']['day'],

@@ -10,6 +10,7 @@ class DailyWeather with ChangeNotifier {
 
 
 
+
   DailyWeather({
     this.dailyTemperature,
     this.condition,

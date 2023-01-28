@@ -15,7 +15,6 @@ class DailyWeather with ChangeNotifier {
     this.uvi,
   });
 
-
   factory DailyWeather.fromJson(Map<String, dynamic> json) {
     final precipitationData = json['daily'][0]['pop'];
     final calculatePrecipitation = precipitationData * 100;

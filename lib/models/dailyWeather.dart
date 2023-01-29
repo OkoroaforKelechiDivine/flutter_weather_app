@@ -8,7 +8,6 @@ class DailyWeather with ChangeNotifier {
   var uvi;
 
 
-
   DailyWeather({
     this.dailyTemperature,
     this.condition,

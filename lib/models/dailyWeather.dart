@@ -7,6 +7,7 @@ class DailyWeather with ChangeNotifier {
   var precipitation;
   var uvi;
 
+
   DailyWeather({
     this.dailyTemperature,
     this.condition,

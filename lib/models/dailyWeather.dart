@@ -30,7 +30,6 @@ class DailyWeather with ChangeNotifier {
       dailyTemperature: json['temp']['day'],
 
 
-
       condition: json['weather'][0]['main'],
       date: DateTime.fromMillisecondsSinceEpoch(json['dt'] * 1000, isUtc: true),
     );
